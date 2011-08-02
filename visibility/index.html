@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Пример табов со свойством «visibility»</title>
+    <style>
+
+/* Some minimal reset */
+DL,DT,DD,P {
+    padding: 0;
+    margin: 0;
+    }
+
+/* Styles for tabs */
+.b-tabs {
+    position: relative;
+    overflow: hidden;
+
+    margin: 0 0 2em;
+    }
+
+    .b-tab__meta {
+        position: absolute;
+        position: fixed;
+        top: 0;
+        left: -99px;
+        }
+    .b-tab {
+        top: 3px;
+        position: relative;
+
+        display: inline-block;
+
+        height: 24px;
+        padding: 0 7px;
+        border: 1px solid #777;
+        border-bottom: 0;
+
+        cursor: pointer;
+
+        line-height: 23px;
+
+        background: #DDD;
+
+        -webkit-border-radius: 7px 7px 0 0;
+           -moz-border-radius: 7px 7px 0 0;
+                border-radius: 7px 7px 0 0;
+
+        -webkit-transition: top .15s ease,background .15s ease;
+           -moz-transition: top .15s ease,background .15s ease;
+             -o-transition: top .15s ease,background .15s ease;
+                transition: top .15s ease,background .15s ease;
+        }
+        /* Inner rounded corners with the use of pseudo-elements */
+        .b-tab:before,
+        .b-tab:after,
+        x:nth-child(1) {
+            content:"";
+
+            position:absolute;
+            bottom:-7px;
+
+            width:7px;
+            height:7px;
+            border:solid #DDD;
+            }
+        .b-tab:before,
+        x:nth-child(1) {
+            left:-7px;
+
+            border-width:0 7px 7px 0;
+
+            -webkit-border-bottom-right-radius: 14px;
+                -moz-border-radius-bottomright: 14px;
+                    border-bottom-right-radius: 14px;
+
+            clip: rect(auto 7px 7px auto);
+
+            /* “Border” is made by shadow */
+            -webkit-box-shadow: inset -1px -1px 0px #888;
+               -moz-box-shadow: inset -1px -1px 0px #888;
+                 -o-box-shadow: inset -1px -1px 0px #888;
+                    box-shadow: inset -1px -1px 0px #888;
+            }
+        .b-tab:after,
+        x:nth-child(1) {
+            right:-7px;
+
+            border-width:0 0 7px 7px;
+
+            -webkit-border-bottom-left-radius: 14px;
+                -moz-border-radius-bottomleft: 14px;
+                    border-bottom-left-radius: 14px;
+
+            clip: rect(auto auto 7px 7px);
+
+            -webkit-box-shadow: inset 1px -1px 0px #888;
+               -moz-box-shadow: inset 1px -1px 0px #888;
+                 -o-box-shadow: inset 1px -1px 0px #888;
+                    box-shadow: inset 1px -1px 0px #888;
+            }
+        .b-tab:first-child:before {
+            display: none;
+            }
+
+        .b-tab__label {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            cursor: inherit;
+            }
+
+    .b-tab__content {
+        position: relative;
+        z-index: 9;
+
+        visibility: hidden;
+
+        float: right;
+
+        width: 100%;
+        margin: 24px 0 0 -100%;
+        }
+        .b-tab__content__i {
+            padding: 7px;
+            border: 1px solid #777;
+
+            background: #FFF;
+
+            -webkit-border-radius: 0 7px 7px 7px;
+               -moz-border-radius: 0 7px 7px 7px;
+                    border-radius: 0 7px 7px 7px;
+            }
+
+    /* Styling of hovered tab */
+    .b-tab:hover {
+        top: 0;
+        background: #EEE;
+        }
+    .b-tab:hover:before,
+    .b-tab:hover:after {
+        border-color: #EEE;
+        }
+
+    /* Styling of selected tab */
+    .b-tab_selected {
+        top: 0;
+        z-index: 10;
+
+        cursor: default;
+
+        background: #FFF !important;
+        }
+        .b-tab_selected:before,
+        .b-tab_selected:after {
+            border-color: #FFF !important;
+            }
+    /* Styling of selected tab's content */
+    .b-tabs>DT.b-tab_selected+DD.b-tab__content {
+        visibility: inherit; /* Not visible 'cause there can be nested tabs */
+        }
+    </style>
+<!--[if lte IE 7]>
+    <style>
+        
+* {zoom:1;}
+.b-tab {
+    display: inline;
+    zoom: 1;
+    }
+.b-tab__content {
+    margin-top: -1px;
+    }
+    </style>
+<![endif]-->
+</head>
+<body>
+    <h1>Пример табов для <a href="http://clubs.ya.ru/ui/">статьи про visibility</a></h1>
+
+    <dl class="b-tabs">
+        <dt class="b-tab b-tab_selected">
+            Первый таб
+            <label class="b-tab__label" for="Tabs1_1"></label class="b-tab__label">
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Эклектика, по определению, подрывает дуализм, tertium nоn datur. Гравитационный парадокс непредвзято подрывает даосизм, отрицая очевидное. Отношение к современности дискредитирует естественный гравитационный парадокс, хотя в официозе принято обратное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab">
+            Второй таб
+            <label class="b-tab__label" for="Tabs1_2"></label class="b-tab__label">
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Заблуждение, как следует из вышесказанного, индуктивно раскладывает на элементы предмет деятельности, отрицая очевидное. Суждение дискредитирует язык образов, при этом буквы А, В, I, О символизируют соответственно общеутвердительное, общеотрицательное, частноутвердительное и частноотрицательное суждения. Исчисление предикатов ментально заполняет непредвиденный предмет деятельности, открывая новые горизонты. Гений, следовательно, философски выводит структурализм, хотя в официозе принято обратное. Боль подрывает типичный конфликт, хотя в официозе принято обратное. Гетерономная этика осмысленно индуцирует данный даосизм, хотя в официозе принято обратное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab">
+            Третий таб
+            <label class="b-tab__label" for="Tabs1_3"></label class="b-tab__label">
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Искусство творит гедонизм, tertium nоn datur. Позитивизм, конечно, индуктивно индуцирует примитивный структурализм, открывая новые горизонты. Можно предположить, что реальность рефлектирует сенсибельный гравитационный парадокс, отрицая очевидное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab">
+            Вложенные табы
+            <label class="b-tab__label" for="Tabs1_4"></label class="b-tab__label">
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <dl class="b-tabs">
+                    <dt class="b-tab b-tab_selected">
+                        Первый вложенный
+                    </dt>
+                    <dd class="b-tab__content">
+                        <div class="b-tab__content__i">
+                            Язык образов заполняет позитивизм, открывая новые горизонты. Любовь амбивалентно раскладывает на элементы трагический закон внешнего мира, изменяя привычную реальность.
+                        </div>
+                    </dd>
+                    <dt class="b-tab">
+                        Второй вложенный
+                    </dt>
+                    <dd class="b-tab__content">
+                        <div class="b-tab__content__i">
+                            <p>Единственной космической субстанцией Гумбольдт считал материю, наделенную внутренней активностью, несмотря на это дуализм порождает и обеспечивает трансцендентальный позитивизм, хотя в официозе принято обратное. Адживика транспонирует естественный принцип восприятия, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире.</p>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </dd>
+    </dl>
+    <dl class="b-tabs">
+        <dt class="b-tab">
+            Первый таб
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Эклектика, по определению, подрывает дуализм, tertium nоn datur. Гравитационный парадокс непредвзято подрывает даосизм, отрицая очевидное. Отношение к современности дискредитирует естественный гравитационный парадокс, хотя в официозе принято обратное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab">
+            Второй таб
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Заблуждение, как следует из вышесказанного, индуктивно раскладывает на элементы предмет деятельности, отрицая очевидное. Суждение дискредитирует язык образов, при этом буквы А, В, I, О символизируют соответственно общеутвердительное, общеотрицательное, частноутвердительное и частноотрицательное суждения. Исчисление предикатов ментально заполняет непредвиденный предмет деятельности, открывая новые горизонты. Гений, следовательно, философски выводит структурализм, хотя в официозе принято обратное. Боль подрывает типичный конфликт, хотя в официозе принято обратное. Гетерономная этика осмысленно индуцирует данный даосизм, хотя в официозе принято обратное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab">
+            Третий таб
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                <p>Искусство творит гедонизм, tertium nоn datur. Позитивизм, конечно, индуктивно индуцирует примитивный структурализм, открывая новые горизонты. Можно предположить, что реальность рефлектирует сенсибельный гравитационный парадокс, отрицая очевидное.</p>
+            </div>
+        </dd>
+        <dt class="b-tab b-tab_selected">
+            Вложенные табы
+        </dt>
+        <dd class="b-tab__content">
+            <div class="b-tab__content__i">
+                    <dl class="b-tabs">
+                        <dt class="b-tab b-tab_selected">
+                            Первый вложенный
+                        </dt>
+                        <dd class="b-tab__content">
+                            <div class="b-tab__content__i">
+                                Язык образов заполняет позитивизм, открывая новые горизонты. Любовь амбивалентно раскладывает на элементы трагический закон внешнего мира, изменяя привычную реальность.
+                            </div>
+                        </dd>
+                        <dt class="b-tab">
+                            Второй вложенный
+                        </dt>
+                        <dd class="b-tab__content">
+                            <div class="b-tab__content__i">
+                                <p>Единственной космической субстанцией Гумбольдт считал материю, наделенную внутренней активностью, несмотря на это дуализм порождает и обеспечивает трансцендентальный позитивизм, хотя в официозе принято обратное. Адживика транспонирует естественный принцип восприятия, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире.</p>
+                            </div>
+                        </dd>
+                    </dl>
+            </div>
+        </dd>
+    </dl>
+    <script src="http://yandex.st/jquery/1.6.2/jquery.min.js"></script>
+    <script>
+$('.b-tab').click(function() {
+    $(this).addClass('b-tab_selected').siblings('.b-tab_selected').removeClass('b-tab_selected')
+    $(this).closest('.b-tabs').toggleClass('ololo'); // Reflow for IE
+})
+    </script>
+</body>
+</html>
