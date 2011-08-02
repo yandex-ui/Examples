@@ -2,14 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Пример вёрстки с учётом скроллбара</title>
     <style>
-.wrap
+.b-wrap
 {
     position: relative;
 }
 
-.test {
+.b-test {
     padding: .3em .5em;
     border: 2px solid #A5CCA5;
     margin: 0 0 1em;
@@ -20,20 +21,20 @@
        -moz-border-radius: 5px;
             border-radius: 5px;
     }
-.scroll
+.b-scroll
 {
     padding-top: 3em;
     height: 9em;
     overflow: auto;
 }
 
-.toolbar
+.b-toolbar
 {
     position: absolute;
     width: 100%;
 }
 
-.fakescroll
+.b-fakescroll
 {
     visibility: hidden;
     overflow: hidden;
@@ -42,7 +43,7 @@
     margin-bottom: -100px;
 }
 
-.fakescroll .test
+.b-fakescroll .b-test
 {
     visibility: visible;
 }
@@ -50,17 +51,18 @@
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <div class="test">
+    <h1>Пример вёрстки с учётом ширины скроллбара для <a href="http://clubs.ya.ru/ui/">статьи про visibility</a></h1>
+    <div class="b-wrap">
+        <div class="b-test">
             Блок на всю доступную ширину
         </div>
-        <div class="fakescroll toolbar">
-            <div class="test">
+        <div class="b-fakescroll b-toolbar">
+            <div class="b-test">
                 Блок снаружи поверх блока со скроллбаром (100% минус ширина скроллбара)
             </div>
         </div>
-        <div class="scroll">
-            <div class="test">
+        <div class="b-scroll">
+            <div class="b-test">
                 Блок внутри на всю ширину
             </div>
             <p>Блок с overflow: auto</p>
@@ -68,11 +70,12 @@
             <p>Дело в том, что дифференциальное исчисление непредсказуемо. Непрерывная функция поддерживает анормальный ортогональный определитель, таким образом сбылась мечта идиота - утверждение полностью доказано. К тому же интеграл Пуассона транслирует контрпример, как и предполагалось. Целое число трансформирует абсолютно сходящийся ряд, как и предполагалось. Поэтому огибающая трансформирует неопределенный интеграл, таким образом сбылась мечта идиота - утверждение полностью доказано.</p>
             <p>Интеграл Дирихле программирует критерий интегрируемости, что известно даже школьникам. Интеграл Фурье проецирует тройной интеграл, что несомненно приведет нас к истине. Уравнение в частных производных отражает максимум, при этом, вместо 13 можно взять любую другую константу. Умножение двух векторов (векторное), не вдаваясь в подробности, привлекает ряд Тейлора, явно демонстрируя всю чушь вышесказанного. Тройной интеграл решительно раскручивает равновероятный многочлен, при этом, вместо 13 можно взять любую другую константу.</p>
         </div>
-        <div class="fakescroll">
-            <div class="test">
+        <div class="b-fakescroll">
+            <div class="b-test">
                 Просто блок снаружи на всю ширину с учётом скроллбара
             </div>
         </div>
     </div>
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>
