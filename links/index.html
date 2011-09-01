@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html id="nojs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Пример вёрстки ссылок</title>
+    <style>
+
+.b-link_type_wrapper {
+    display: inline-block;
+
+    text-decoration: none;
+    }
+    .b-link__inner {
+        line-height: 1.1;
+
+        display: inline-block;
+
+        text-decoration: underline;
+        }
+    .b-link_type_wrapper .b-ico {
+        margin-top: -4px;
+
+        vertical-align: middle;
+        }
+#js .b-link_mode_pseudo,
+#js .b-link_mode_pseudo .b-link__inner {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+    }
+#js .b-link_mode_pseudo.b-link_type_wrapper {
+    border-bottom: 0;
+    }
+/* Visual styles */
+
+.b-link
+{
+    color: #1A3DC1;
+}
+
+a.b-link:hover
+{
+    color: #F00;
+}
+
+table
+{
+    font: 13px/1.25 Arial, sans-serif;
+}
+
+
+th
+{
+    font-weight: normal;
+    text-align: right;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Пример вёрстки ссылок для <a href="http://clubs.ya.ru/ui/">соответствующей статьи</a></h1>
+    
+    <p>Каждая ссылка имеет единую кликабельную область без промежутков и без подчёркивания там, где его не должно быть.</p>
+    
+    <table>
+        <tbody>
+            <tr>
+                <th>Просто ссылка:</th>
+                <td><a href="http://clubs.ya.ru/ui/" class="b-link">блог о разработке интерфейсов</a></td>
+            </tr>
+            <tr>
+                <th>Псевдоссылка:</th>
+                <td><a href="#hello" class="b-link b-link_mode_pseudo">#hello</a></td>
+            </tr>
+            <tr>
+                <th>Псевдоссылка в кавычках:</th>
+                <td><a href="#hello" class="b-link b-link_type_wrapper b-link_mode_pseudo">«<span class="b-link__inner">привет</span>»</a></td>
+            </tr>
+            <tr>
+                <th>Ссылка со стрелочкой:</th>
+                <td>
+                    <a href="http://clubs.ya.ru/ui/" class="b-link b-link_type_wrapper">
+                        ←
+                        <span class="b-link__inner">назад к статье</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th>Ссылка с иконкой в начале:</th>
+                <td>
+                    <a href="http://ya.ru/" class="b-link b-link_type_wrapper">
+                        <img class="b-ico" src="http://favicon.yandex.ru/favicon/ya.ru" alt="" />
+                        <span class="b-link__inner">Яндекс</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th>Псевдоссылка с иконкой в конце:</th>
+                <td>
+                    <a href="http://mail.yandex.ru/" class="b-link b-link_type_wrapper b-link_mode_pseudo">
+                        <span class="b-link__inner">удивительно, псевдоссылка почему-то ведёт на Яндекс.Почту:</span>
+                        <img class="b-ico" src="http://favicon.yandex.ru/favicon/mail.yandex.ru" alt="" />
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        document.documentElement.id = "js";
+    </script>
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>
