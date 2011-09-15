@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Примеры со спрайтами и артефактами при зуме</title>
+    <style>
+
+.b-ico {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(sprite.png) no-repeat;
+    }
+
+.fixed .b-ico {
+    background-image: url(sprite_fixed.png);
+    }
+
+/* Accelerated compositing layer */
+.ACL,
+.ACL .b-ico {
+    -webkit-transform: translateZ(0);
+    }
+
+.b-ico_1 { background-position:   0     0  ; }
+.b-ico_2 { background-position: -16px   0  ; }
+.b-ico_3 { background-position:   0   -16px; }
+.b-ico_4 { background-position: -16px -16px; }
+
+.fixed .b-ico_1 { background-position:   0     0  ; }
+.fixed .b-ico_2 { background-position: -17px   0  ; }
+.fixed .b-ico_3 { background-position:   0   -17px; }
+.fixed .b-ico_4 { background-position: -17px -17px; }
+
+    </style>
+</head>
+<body>
+    <h1>Примеры для <a href="http://clubs.ya.ru/ui/">статьи про артефакты масштабирования</a></h1>
+
+    <h2>«Плохой» спрайт</h2>
+    <ul>
+        <li><span class="b-ico b-ico_1"></span></li>
+        <li><span class="b-ico b-ico_2"></span></li>
+        <li><span class="b-ico b-ico_3"></span></li>
+        <li><span class="b-ico b-ico_4"></span></li>
+    </ul>
+
+    <h2>«Хороший» спрайт</h2>
+    <ul class="fixed">
+        <li><span class="b-ico b-ico_1"></span></li>
+        <li><span class="b-ico b-ico_2"></span></li>
+        <li><span class="b-ico b-ico_3"></span></li>
+        <li><span class="b-ico b-ico_4"></span></li>
+    </ul>
+
+    <h1>Примеры для iOS</h1>
+
+    <h2>«Плохой» спрайт + аппаратное ускорение рендеринга</h2>
+    <ul class="ACL">
+        <li><span class="b-ico b-ico_1"></span></li>
+        <li><span class="b-ico b-ico_2"></span></li>
+        <li><span class="b-ico b-ico_3"></span></li>
+        <li><span class="b-ico b-ico_4"></span></li>
+    </ul>
+
+    <h2>«Хороший» спрайт + аппаратное ускорение рендеринга</h2>
+    <ul class="fixed ACL">
+        <li><span class="b-ico b-ico_1"></span></li>
+        <li><span class="b-ico b-ico_2"></span></li>
+        <li><span class="b-ico b-ico_3"></span></li>
+        <li><span class="b-ico b-ico_4"></span></li>
+    </ul>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>
