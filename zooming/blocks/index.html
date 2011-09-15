@@ -34,6 +34,11 @@
     margin: -1em -1em 0 -4em;
     }
     
+.b-block_gpu,
+.b-block_gpu .b-block__inner {
+    -webkit-transform: translateZ(0);
+    }
+    
     </style>
 </head>
 <body>
@@ -48,6 +53,11 @@
     <div class="b-block b-block_good">
         <div class="b-block__inner"></div>
         Исправленный блок
+    </div>
+
+    <div class="b-block b-block_good b-block_gpu">
+        <div class="b-block__inner"></div>
+        Блок с аппаратным<br/>ускорением
     </div>
 
     <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
