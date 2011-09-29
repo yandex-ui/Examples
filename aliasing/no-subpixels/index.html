@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html id="nojs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Примеры с различным субпиксельным сглаживанием</title>
+    <style>
+
+.block
+{
+    display: inline-block;
+    padding: 10px;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    font: 20px/1 Arial, sans-serif;
+}
+
+.block_white
+{
+    color: #000;
+    border: 1px solid #808080;
+    background: #FFF;
+}
+.block_black
+{
+    padding: 11px;
+    color: #FFF;
+    background: #000;
+}
+
+.block_no-subpixels,
+.no-subpixels .test
+{
+    -webkit-font-smoothing: antialiased;
+}
+
+table
+{
+    font: 16px/1.25 Arial, sans-serif;
+}
+
+
+TH
+{
+    font-weight: normal;
+    text-align: right;
+}
+
+TD
+{
+    padding: .25em .5em;
+}
+
+.rgb .test
+{
+    color: #808080;
+}
+
+.opacity .test
+{
+    opacity: .5;
+}
+
+.rgba .test
+{
+    color: rgba(0,0,0,.5);
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Примеры различий сглаживания для <a href="http://clubs.ya.ru/ui/">соответствующей статьи</a></h1>
+
+    <h2>Субпиксельное сглаживание включено</h2>
+    <p>
+        <span class="block block_white">
+            Чёрный текст на белом фоне
+        </span>
+        <span class="block block_black">
+            Белый текст на чёрном фоне
+        </span>
+    </p>
+
+    <h2>Субпиксельное сглаживание выключено для чёрного фона</h2>
+    <p>
+        <span class="block block_white">
+            Чёрный текст на белом фоне
+        </span>
+        <span class="block block_black block_no-subpixels">
+            Белый текст на чёрном фоне
+        </span>
+    </p>
+
+    <h2>Разные реализации серого текста на разном фоне</h2>
+    <table>
+        <colgroup>
+            <col />
+            <col style="background: #FFF;" />
+            <col style="background: #909090;" />
+            <col style="background: #AAF;" />
+        </colgroup>
+        <tbody>
+            <tr class="rgb">
+                <th>RGB:</th>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+            </tr>
+            <tr class="opacity">
+                <th>Opacity:</th>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+            </tr>
+            <tr class="rgba">
+                <th>RGBA:</th>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+                <td><div class="test">Серый текст</div></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>

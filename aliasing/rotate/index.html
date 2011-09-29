@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html id="nojs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Примеры алиасинга повёрнутого блока</title>
+    <style>
+
+.block
+{
+    width: 150px;
+    height: 150px;
+    background: #000;
+    margin: 60px 0;
+    -webkit-transform: rotate(42deg) translateZ(0);
+       -moz-transform: rotate(42deg);
+         -o-transform: rotate(42deg);
+            transform: rotate(42deg);
+}
+.fixed
+{
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0);
+}
+
+    </style>
+</head>
+<body>
+    <h1>Примеры субпиксельного сглаживания блоков для <a href="http://clubs.ya.ru/ui/">соответствующей статьи</a></h1>
+    <h2>Блок с «лесенкой» в мобильном webkit</h2>
+    <div class="block"></div>
+    <h2>Исправленный блок</h2>
+    <div class="block fixed"></div>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>

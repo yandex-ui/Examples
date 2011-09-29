@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html id="nojs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Пример потери сглаживания из-за аппаратного ускорения</title>
+    <style>
+
+.accelerated
+{
+    -webkit-transform: translateZ(0);
+}
+
+.fixed
+{
+    background: #FFF;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Пример потери зглаживания для <a href="http://clubs.ya.ru/ui/">соответствующей статьи</a></h1>
+
+    <div class="accelerated">
+        <h2>Тут субпиксельное сглаживание теряется в webkit</h2>
+        <p>Постоянная величина накладывает математический анализ, что несомненно приведет нас к истине. Дисперсия очевидна не для всех. Контрпример расточительно отображает экспериментальный определитель системы линейных уравнений, дальнейшие выкладки оставим студентам в качестве несложной домашней работы. В соответствии с законом больших чисел, функциональный анализ неоднозначен.</p>
+    </div>
+    <div class="accelerated fixed">
+        <h2>Тут сглаживание исправлено</h2>
+        <p>Постоянная величина накладывает математический анализ, что несомненно приведет нас к истине. Дисперсия очевидна не для всех. Контрпример расточительно отображает экспериментальный определитель системы линейных уравнений, дальнейшие выкладки оставим студентам в качестве несложной домашней работы. В соответствии с законом больших чисел, функциональный анализ неоднозначен.</p>
+    </div>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>
