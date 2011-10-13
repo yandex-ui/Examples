@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Пример вёрстки с одновременным заданием top, right, bottom и left</title>
+    <style>
+HTML,
+BODY,
+H1
+{
+    padding: 0;
+    margin: 0;
+}
+
+BODY
+{
+    background: #BBB;
+}
+
+
+.b-header
+{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    right: 1em;
+
+    height: 5em;
+}
+
+.b-content
+{
+    position: absolute;
+    top: 9em;
+    left: 18em;
+    right: 1em;
+    bottom: 6em;
+}
+.b-aside
+{
+    position: absolute;
+    top: 9em;
+    left: 1em;
+    bottom: 6em;
+
+    width: 14em;
+}
+
+.b-footer
+{
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    left: 1em;
+    
+    height: 2em;
+}
+
+.b-header,
+.b-content,
+.b-aside,
+.b-footer
+{
+    padding: 1em;
+
+    background: #EFEFEF;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,.2);
+       -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,.2);
+         -o-box-shadow: 0 1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,.2);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,.2);
+    overflow: auto;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="b-header">
+        <h1>Пример вёрстки для <a href="http://clubs.ya.ru/ui/">статьи про позиционирование</a></h1>
+    </div>
+    <div class="b-content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="b-aside">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="b-footer">
+        Footer
+    </div>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063, enableAll: true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>
