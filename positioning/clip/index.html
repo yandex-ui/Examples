@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Примеры использования свойства clip</title>
+    <style>
+
+.wrap
+{
+    font: 10px/1.3 "Helvetica Neue",Arial,sans-serif;
+    position: relative;
+
+    float: left;
+    
+    overflow: auto;
+
+    min-width: 132px;
+    min-height: 146px;
+    margin-right: 1em;
+
+    text-align: center;
+}
+
+.test
+{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -52px;
+    border: 2px solid #A5CCA5;
+    
+    background: #E6FFE6;
+    
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 0 20px -4px rgba(0,0,0,0.6);
+       -moz-box-shadow: 0 0 20px -4px rgba(0,0,0,0.6);
+         -o-box-shadow: 0 0 20px -4px rgba(0,0,0,0.6);
+            box-shadow: 0 0 20px -4px rgba(0,0,0,0.6);
+}
+
+.wrap_clip1 .test
+{
+    clip: rect(-20px 999px 999px 2px);
+    clip: rect(-20px,999px,999px,2px);
+    -webkit-border-radius: 0 5px 5px 0;
+       -moz-border-radius: 0 5px 5px 0;
+            border-radius: 0 5px 5px 0;
+}
+
+.wrap_clip2 .test
+{
+    clip: rect(2px 102px 999px -20px);
+    clip: rect(2px,102px,999px,-20px);
+    -webkit-border-radius: 0 0 0 5px;
+       -moz-border-radius: 0 0 0 5px;
+            border-radius: 0 0 0 5px;
+}
+
+.wrap_clip3 .test
+{
+    clip: rect(-20px 999px 102px -20px);
+    clip: rect(-20px,999px,102px,-20px);
+    -webkit-border-radius: 5px 5px 0 0;
+       -moz-border-radius: 5px 5px 0 0;
+            border-radius: 5px 5px 0 0;
+}
+
+.wrap_clip4 .test
+{
+    clip: rect(2px 999px 102px 2px);
+    clip: rect(2px,999px,102px,2px);
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+
+.wrap_clip5 .test
+{
+    bottom: -4px;
+    left: auto;
+    right: -4px;
+    margin: 0;
+    clip: rect(-20px 100px 100px -20px);
+    clip: rect(-20px,100px,100px,-20px);
+    -webkit-border-radius: 5px 0 0 0;
+       -moz-border-radius: 5px 0 0 0;
+            border-radius: 5px 0 0 0;
+    
+}
+.wrap_clip6
+{
+    overflow: visible;
+}
+
+.wrap_clip6 .image
+{
+    position: absolute;
+    top: -24px;
+    left: -37px;
+    clip: rect(54px 155px 163px 59px);
+    clip: rect(54px,155px,163px,59px);
+    border: 1px solid #888;
+    
+    -webkit-transition: clip .5s;
+       -moz-transition: clip .5s;
+         -o-transition: clip .5s;
+            transition: clip .5s;
+}
+
+.wrap_clip6:hover .image
+{
+    clip: rect(0,202px,222px,0);
+}
+
+.invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6,IE7 */
+    clip: rect(1px,1px,1px,1px);
+    }    
+
+    </style>
+</head>
+<body>
+    <h1>Примеры вёрстки для <a href="http://clubs.ya.ru/ui/">статьи про свойство clip</a></h1>
+    
+    <h2>Пример скрытого текста</h2>
+    
+    <p>Попробуйте выделить это предложение <span class="invisible">(содержащее скрытый контент,который будет скрыт в браузере)</span> и скопировать куда-нибудь. <span class="invisible">Спасибо!</span></p>
+    
+    <h2>Примеры с различными вариантами использования свойства clip</h2>
+    
+    <div class="wrap wrap_clip1">
+        -20px,999px,999px,2px
+        <div class="test"></div>
+    </div>
+    <div class="wrap wrap_clip2">
+        2px,102px,999px,-20px
+        <div class="test"></div>
+    </div>
+    <div class="wrap wrap_clip3">
+        -20px,999px,102px,-20px
+        <div class="test"></div>
+    </div>
+    <div class="wrap wrap_clip4">
+        2px,999px,102px,2px
+        <div class="test"></div>
+    </div>
+    
+    <div class="wrap wrap_clip5">
+        баг overflow в IE/webkit
+        <div class="test"></div>
+    </div>
+    <div class="wrap wrap_clip6">
+        отображение части картинки<br/> + транзишн
+        <img src="http://img-fotki.yandex-team.ru/get/100/1120000000001666.0/0_39_aa5882e0_orig" class="image"/>
+    </div>
+
+    <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w,c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8530063 = new Ya.Metrika({id:8530063,enableAll: true}); } catch(e) { } }); })(window,"yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/8530063" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</body>
+</html>
